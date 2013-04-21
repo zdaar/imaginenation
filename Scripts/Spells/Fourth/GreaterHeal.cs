@@ -28,12 +28,12 @@ namespace Server.Spells.Fourth
 
         public override TimeSpan GetCastDelay()
         {
-            CustomRegion cR = Caster.Region as CustomRegion;
+         // CustomRegion cR = Caster.Region as CustomRegion;
 
-            if (cR != null && cR.Controller.FizzlePvP && Caster.AccessLevel == AccessLevel.Player)
-                return TimeSpan.FromSeconds(3.5);
+         // if (cR != null && cR.Controller.FizzlePvP && Caster.AccessLevel == AccessLevel.Player)
+        return TimeSpan.FromSeconds(2.3);
             
-            return base.GetCastDelay();
+         // return base.GetCastDelay();
         }
 
         public override void OnPlayerCast()
