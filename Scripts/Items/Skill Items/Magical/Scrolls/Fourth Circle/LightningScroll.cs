@@ -35,7 +35,7 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
 
-        /*
+        
         public override void OnDoubleClick(Mobile from)//XUO SCROLLS
         {
             if (!Sphere.CanUse(from, this))
@@ -59,6 +59,6 @@ namespace Server.Items
                 base.OnDoubleClick(from);
             }
         }
-        */
+        
     }
 }
