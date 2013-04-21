@@ -22,7 +22,7 @@ namespace Server.Misc
 
 	public class AccountHandler
 	{
-		private static int MaxAccountsPerIP = 1;
+		private static int MaxAccountsPerIP = 5;
 		private static bool AutoAccountCreation = true;
 		private static readonly bool RestrictDeletion = !TestCenter.Enabled;
 		private static readonly TimeSpan DeleteDelay = TimeSpan.FromDays( 7.0 );
