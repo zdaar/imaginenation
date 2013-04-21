@@ -35,7 +35,7 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
 
-        /*public override void OnDoubleClick(Mobile from)
+        public override void OnDoubleClick(Mobile from)
         {
             if (!Sphere.CanUse(from, this))
                 return;
@@ -58,7 +58,7 @@ namespace Server.Items
                 base.OnDoubleClick(from);
             }
         }
-
+        /*
         public bool Transform(Mobile from, ScrollTransformer transformer)
         {
             if (Deleted || !from.CanSee(this)) return false;
