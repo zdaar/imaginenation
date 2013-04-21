@@ -46,7 +46,7 @@ namespace Server.Spells
         public virtual bool CheckLOS { get { return true; } } // Jonny
 
         public virtual bool RevealOnCast { get { return true; } }
-        public virtual bool ClearHandsOnCast { get { return true; } }
+        public virtual bool ClearHandsOnCast { get { return false; } }
         public virtual bool ShowHandMovement { get { return true; } }
 
         public virtual bool DelayedDamage { get { return false; } }

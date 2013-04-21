@@ -126,7 +126,7 @@ namespace Server.Items
 							( (PlayerMobile)from ).SpellCheck();
 
 						from.PlaySound( 0x57 );
-                        ClearHandsBandage(from);
+                        //ClearHandsBandage(from);
 
 						BandageContext.BeginHeal( from, targetedMobile, m_Bandage );
 					}
