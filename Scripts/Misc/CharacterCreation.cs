@@ -28,14 +28,13 @@ namespace Server.Misc
 				m.AddItem( pack );
 			}
 
-			PackItem( new Gold( 3000 ) ); // Starting gold can be customized here
-			PackItem( new MiniRewardCan() );
-			PackItem( new Dagger() );
-			PackItem( new Spellbook() );
-            PackItem( new KeyRing());
-            PackItem( new PlayerGuide());
+			//PackItem( new Gold( 3000 ) ); // Starting gold can be customized here
+			//PackItem( new MiniRewardCan() );
+			//PackItem( new Dagger() );
+            PackItem(new Spellbook(UInt64.MaxValue));
+            //PackItem( new KeyRing());
+            //PackItem( new PlayerGuide());
             PackItem( new Scissors());
-		
 		}
 
 		private static Item MakeBlessed( Item item )
@@ -683,12 +682,12 @@ namespace Server.Misc
 
 			AddBackpack( newChar );
 
-            //SetStats(newChar, state, args.Str, args.Dex, args.Int);
+            //SetStats(newChar, state, 100, 100, 100);
             //SetSkills( newChar, args.Skills, args.Profession );
 
             // Max stats
-            newChar.Str = 95; newChar.Int = 95; newChar.Dex = 95;
-            newChar.Hits = 95; newChar.Mana = 95; newChar.Stam = 95;
+            newChar.Str = 100; newChar.Int = 100; newChar.Dex = 100;
+            newChar.Hits = 100; newChar.Mana = 100; newChar.Stam = 100;
 			
             Race race = newChar.Race;
 
@@ -724,9 +723,13 @@ namespace Server.Misc
 			//IN:X Settings
 			newChar.StatCap = 300;
 			newChar.SkillsCap = 54000; //Iza - changed from 52000 to 54000 for proper all skills cap.
+            Server.Skills skills = newChar.Skills;
+
+			for ( int i = 0; i < skills.Length; ++i )
+				skills[i].Base = 100f;
 
 			//CityInfo city = GetStartLocation( args, false );
-            CityInfo city = new CityInfo("Britain", "Bank", 1424, 1697, 10, Map.Felucca);
+            CityInfo city = new CityInfo("Green Acres", "Duel Pit", 5801, 1080, 0, Map.Felucca);
 
 			newChar.MoveToWorld( city.Location, city.Map );
 
