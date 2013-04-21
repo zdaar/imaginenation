@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Server, Version=2.2.4858.38550, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Server.exe</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -4356,12 +4360,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Scripts\Properties\Resources.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RunUO\RunUO.csproj">
-      <Project>{FCC28366-0B5D-4B0D-91D1-D98EF391D725}</Project>
-      <Name>RunUO</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
