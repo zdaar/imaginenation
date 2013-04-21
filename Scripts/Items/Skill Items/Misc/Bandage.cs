@@ -71,7 +71,7 @@ namespace Server.Items
 
 			if( from.InRange( GetWorldLocation(), 3 ) && from.InLOS(this) )
 			{
-				from.SendAsciiMessage( "What do you want to use the clean bandages on?" );
+				from.SendAsciiMessage( "What do you want to use the clean bandages on, mofo?" );
 				from.Target = new InternalTarget( this );
 			}
 			else
