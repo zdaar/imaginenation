@@ -2833,6 +2833,7 @@
     <Compile Include="Scripts\Items\Skill Items\Magical\Scrolls\Second Circle\ProtectionScroll.cs" />
     <Compile Include="Scripts\Items\Skill Items\Magical\Scrolls\Second Circle\StrengthScroll.cs" />
     <Compile Include="Scripts\Items\Skill Items\Magical\Scrolls\Seventh Circle\ChainLightningScroll.cs" />
+    <Compile Include="Scripts\Items\Skill Items\Magical\Scrolls\Seventh Circle\NOSfsScroll.cs" />
     <Compile Include="Scripts\Items\Skill Items\Magical\Scrolls\Seventh Circle\EnergyFieldScroll.cs" />
     <Compile Include="Scripts\Items\Skill Items\Magical\Scrolls\Seventh Circle\FlamestrikeScroll.cs" />
     <Compile Include="Scripts\Items\Skill Items\Magical\Scrolls\Seventh Circle\GateTravelScroll.cs" />

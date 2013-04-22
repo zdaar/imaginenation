@@ -1,22 +1,23 @@
 ﻿namespace Server.Items
 {
-    public class NOSfsScroll : SpellScroll
+    public class NOSFlameStrikeScroll : SpellScroll
     {
         public override int ManaCost { get { return 25; } } //Loki edit
 
         [Constructable]
-        public NOSfsScroll()
+        public NOSFlameStrikeScroll()
             : this(1)
         {
         }
 
         [Constructable]
-        public NOSfsScroll(int amount)
+        public NOSFlameStrikeScroll(int amount)
             : base(50, 0x1F5F, amount)//SERIAL ?
         {
+            Name = "(NOS)FlameStrike";
         }
 
-        public NOSfsScroll(Serial serial)
+        public NOSFlameStrikeScroll(Serial serial)
             : base(serial)
         {
         }
