@@ -19,7 +19,20 @@ namespace Server.Commands
         public static void Initialize()
         {
             CommandHandlers.Register("Say", AccessLevel.Counselor, Say_OnCommand);
+            CommandHandlers.Register("Wop", AccessLevel.Player, Wop_OnCommand);
             if (SeperateCommands) CommandHandlers.Register("ItemSay", AccessLevel.Counselor, ItemSay_OnCommand);
+        }
+
+        [Usage("wop <text>")]
+        [Description("Gives the Wop")]
+        public static void Wop_OnCommand(CommandEventArgs e)
+        {
+            string toSay = e.ArgString.Trim();
+
+            if (toSay.Length > 0)
+                e.Mobile.PublicOverheadMessage(MessageType.Spell, 906, true, toSay, true);
+            else
+                e.Mobile.SendMessage("Format: .wop \"<text>\"");
         }
 
         [Usage("Say <text>")]
