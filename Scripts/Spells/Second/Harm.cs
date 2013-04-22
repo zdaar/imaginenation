@@ -25,7 +25,7 @@ namespace Server.Spells.Second
         //Loki edit: New PvP changes
         public override TimeSpan GetCastDelay()
         {
-            return TimeSpan.FromSeconds(2.1);
+            return TimeSpan.FromSeconds(3.0);
         }
 
         public override void OnPlayerCast()
