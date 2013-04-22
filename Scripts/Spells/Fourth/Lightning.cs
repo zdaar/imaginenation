@@ -8,7 +8,7 @@ namespace Server.Spells.Fourth
     {
         public override SpellCircle Circle { get { return SpellCircle.Fourth; } }
         public override int Sound { get { return 0x29; } }
-        public override int ManaCost { get { return 10; } } //Loki edit
+        public override int ManaCost { get { return 20; } } //Loki edit
 
 		private static readonly SpellInfo m_Info = new SpellInfo(
 				"Lightning", "Por Ort Grav",
@@ -25,7 +25,7 @@ namespace Server.Spells.Fourth
         //Loki edit: New PvP changes
         public override TimeSpan GetCastDelay()
         {
-            return TimeSpan.FromSeconds(1.0);
+            return TimeSpan.FromSeconds(2.5);
         }
 
         public override void OnPlayerCast()
@@ -59,7 +59,7 @@ namespace Server.Spells.Fourth
 			{
 				SpellHelper.CheckReflect( (int)Circle, Caster, ref m );
 
-			    double damage = 16 + ((int)(GetDamageSkill(Caster) - GetResistSkill(m)) / 12);
+			    double damage = 20 + ((int)(GetDamageSkill(Caster) - GetResistSkill(m)) / 12);
 
 				m.BoltEffect( 0 );
 
