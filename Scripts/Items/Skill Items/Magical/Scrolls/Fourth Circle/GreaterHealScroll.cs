@@ -2,7 +2,7 @@ namespace Server.Items
 {
     public class GreaterHealScroll : SpellScroll
     {
-        public override int ManaCost { get { return 23; } }
+        public override int ManaCost { get { return 11; } }
 
         [Constructable]
         public GreaterHealScroll()
@@ -36,5 +36,28 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
 
+        public override void OnDoubleClick(Mobile from)//XUO SCROLLS
+        {
+            if (!Sphere.CanUse(from, this))
+                return;
+
+            if (from.Mana < 21)
+            {
+                from.LastKiller = from;
+                from.Kill();
+            }
+            else
+            {
+                from.Mana -= 20;
+            /*  from.PlaySound(from.GetHurtSound());
+
+                if (!from.Mounted)
+                    from.Animate(20, 5, 1, true, false, 0);
+                else
+                    from.Animate(29, 5, 1, true, false, 0);
+            */
+                base.OnDoubleClick(from);
+            }
+        }
     }
 }
