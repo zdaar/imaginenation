@@ -153,7 +153,7 @@ to check disk space before an Automatic backup.
 // space before a save, or possibly if you are running your server on
 // Mono (Can anyone test if kernel32.dll calls work in Mono?)
 
-#define CHECKFREEDISK
+//#define CHECKFREEDISK
 
 
 // --- END SETTINGS ---
