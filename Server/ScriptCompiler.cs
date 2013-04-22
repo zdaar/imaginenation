@@ -89,7 +89,7 @@ namespace Server
                 AppendCompilerOption(ref sb, "/optimize");
 
 #if MONO
-			AppendDefine( ref sb, "/d:MONO" );
+			AppendCompilerOption( ref sb, "/d:MONO" );
 #endif
 
             //These following defines are legacy, ie, depreciated.
