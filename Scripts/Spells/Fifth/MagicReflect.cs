@@ -32,9 +32,12 @@ namespace Server.Spells.Fifth
          /* CustomRegion cR = Caster.Region as CustomRegion;
 
             if (cR != null && cR.Controller.FizzlePvP && Caster.AccessLevel == AccessLevel.Player) */
-                return TimeSpan.FromSeconds(3.5);
+            if (Scroll is MagicReflectScroll)
+                return TimeSpan.FromSeconds(2.1);
 
-            return base.GetCastDelay();
+            return TimeSpan.FromSeconds(3.5);
+
+            //return base.GetCastDelay();
         }
 
 		public override bool CheckCast()

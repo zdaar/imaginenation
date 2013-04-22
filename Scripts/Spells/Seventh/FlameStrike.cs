@@ -27,6 +27,9 @@ namespace Server.Spells.Seventh
         {
             CustomRegion cR = Caster.Region as CustomRegion;
 
+            if (Scroll is FlamestrikeScroll)
+                return TimeSpan.FromSeconds((2.2));
+
             if (cR != null && cR.Controller.FizzlePvP && Caster.AccessLevel == AccessLevel.Player)
                 return TimeSpan.FromSeconds(3.5);
             

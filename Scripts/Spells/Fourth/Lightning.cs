@@ -25,6 +25,9 @@ namespace Server.Spells.Fourth
         //Loki edit: New PvP changes
         public override TimeSpan GetCastDelay()
         {
+            if(Scroll is LightningScroll)
+                return TimeSpan.FromSeconds(1.2);
+
             return TimeSpan.FromSeconds(2.5);
         }
 
