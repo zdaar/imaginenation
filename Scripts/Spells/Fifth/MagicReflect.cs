@@ -10,6 +10,7 @@ namespace Server.Spells.Fifth
     {
         private static readonly Dictionary<Mobile, Timer> m_Timers = new Dictionary<Mobile, Timer>();
 
+        public override int ManaCost { get { return 16; } }
         public override SpellCircle Circle { get { return SpellCircle.Fifth; } }
         public override int Sound { get { return 488; } }
 
@@ -25,6 +26,16 @@ namespace Server.Spells.Fifth
 		public MagicReflectSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
+
+        public override TimeSpan GetCastDelay()
+        {
+         /* CustomRegion cR = Caster.Region as CustomRegion;
+
+            if (cR != null && cR.Controller.FizzlePvP && Caster.AccessLevel == AccessLevel.Player) */
+                return TimeSpan.FromSeconds(3.5);
+
+            return base.GetCastDelay();
+        }
 
 		public override bool CheckCast()
 		{
