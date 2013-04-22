@@ -59,7 +59,7 @@ namespace Server.Spells.Second
 				SpellHelper.CheckReflect( (int)Circle, Caster, ref m );
 
                 //Loki edit: New PvP changes
-                double damage = 21 + ((int)(GetDamageSkill(Caster) - GetResistSkill(m)) / 12);
+                double damage = 5;
 
 				m.FixedEffect ( 0x374A, 1, 15 );
 				m.PlaySound( Sound );
