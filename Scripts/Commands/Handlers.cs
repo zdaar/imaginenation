@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
-using Knives.Chat3;
 using Server.Commands.Generic;
 using Server.Diagnostics;
 using Server.Engines.Help;
@@ -966,9 +965,9 @@ namespace Server.Commands
 
         public static void BroadcastMessage(AccessLevel ac, int hue, string message, Mobile mob)
         {
-            //Send to IRC channel first
-            if (ac == AccessLevel.Player)
-                IrcConnection.Connection.SendUserMessage(mob, message);
+//            //Send to IRC channel first
+//            if (ac == AccessLevel.Player)
+//                IrcConnection.Connection.SendUserMessage(mob, message);
 
             //Then add prefix and name to avoid duplicate of those in IRC chat (since that is done separate)
             if (mob != null)

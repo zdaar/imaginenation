@@ -150,7 +150,7 @@ namespace Server.Engines.Craft
                 AddCraft(typeof(HourglassAni), 1044050, "spinning hourglass", 75.0, 125.0, typeof(Sand), 1044625, 10, 1044627);
                 AddCraft(typeof(GlassSkull), 1044050, "glass skull", 90.0, 110.8, typeof(Sand), 1044625, 40, 1044627);
                 index = AddCraft(typeof(Mirror), 1044050, "mirror", 90.0, 111.5, typeof(Sand), 1044625, 50, 1044627);
-                AddRes(index, typeof(Clay), "Clay", 20, 1044253);
+                //AddRes(index, typeof(Clay), "Clay", 20, 1044253);
                 AddRes(index, typeof(Granite), "Granite", 5, 1044253);
 
                 if (Core.ML)

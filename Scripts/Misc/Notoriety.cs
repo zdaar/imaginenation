@@ -7,9 +7,6 @@ using Server.Mobiles;
 using Server.Multis;
 using Server.Regions;
 using Server.SkillHandlers;
-//Bounty System Start
-using Server.BountySystem;
-//Bounty System End
 
 namespace Server.Misc
 {
@@ -565,11 +562,6 @@ namespace Server.Misc
                 if (master != null && CheckAggressor(master.Aggressors, target))
                     return Notoriety.CanBeAttacked;
 			}
-
-            //bounty system
-            if (BountyBoard.Attackable(source, target))
-                return Notoriety.CanBeAttacked;
-            //end bounty system
 
 			return Notoriety.Innocent;
 		}

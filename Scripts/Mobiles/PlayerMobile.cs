@@ -34,11 +34,7 @@ using Server.Targeting;
 using RankDefinition=Server.Guilds.RankDefinition;
 using Server.Spells.Spellweaving;
 using Server.Custom.Games;
-using Server.Poker;
 using Server.Engines.PartySystem;
-//bounty system
-using Server.BountySystem;
-//end bounty system
 
 namespace Server.Mobiles
 {
@@ -119,18 +115,6 @@ namespace Server.Mobiles
         }
         #endregion
 
-        // bounty system
-	    private ArrayList m_BountyUpdateList = new ArrayList();
-
-	    public bool ShowBountyUpdate { get; set; }
-
-	    public ArrayList BountyUpdateList
-        {
-            get { return m_BountyUpdateList; }
-            set { m_BountyUpdateList = value; }
-        }
-        //end bounty system
-
         private class CountAndTimeStamp
 		{
 			private int m_Count;
@@ -148,13 +132,6 @@ namespace Server.Mobiles
 
         private List<Mobile> m_AutoStabled;
         private List<Mobile> m_AllFollowers;
-
-        private PokerGame m_PokerGame; //Edit for Poker System
-        public PokerGame PokerGame
-        {
-            get { return m_PokerGame; }
-            set { m_PokerGame = value; }
-        }
 
 	    private TimeSpan m_PlayerGuildGameTime;
 		private PlayerFlag m_Flags;
@@ -1120,16 +1097,6 @@ namespace Server.Mobiles
                 ((PlayerMobile)from).OfflineMessagesFrom.Clear();
             }
 
-            //bounty system
-            PlayerMobile player = (PlayerMobile)from;
-
-            if (player.ShowBountyUpdate)
-            {
-                from.SendGump(new BountyStatusGump(from, player.BountyUpdateList));
-                player.BountyUpdateList.Clear();
-                player.ShowBountyUpdate = false;
-            }
-            //end bounty system
 		}
 
 		private bool m_NoDeltaRecursion;
@@ -2816,14 +2783,6 @@ namespace Server.Mobiles
                 {
                     Item item = Backpack.Items[i];
 
-                    //Taran: Empty reward can on death
-                    if (item is MiniRewardCan)
-                    {
-                        MiniRewardCan mrc = item as MiniRewardCan;
-                        if (mrc.trashedItem != null)
-                            mrc.trashedItem.Delete();
-                    }
-
                     //Save location of the item if it's newbied
                     if (item.LootType == LootType.Blessed || item.LootType == LootType.Newbied || AccessLevel > AccessLevel.Player)
                         m_ItemLocations[item] = new Point2D(item.X, item.Y);
@@ -3671,11 +3630,6 @@ namespace Server.Mobiles
             if (Core.ML && target is BaseCreature && ((BaseCreature)target).Controlled && this == ((BaseCreature)target).ControlMaster)
                 return false;
 
-            //bounty system
-			if( BountyBoard.Attackable( this, target ) )
-				return false;
-			//end bounty system
-
 			return base.IsHarmfulCriminal( target );
 		}
 
@@ -4506,16 +4460,6 @@ namespace Server.Mobiles
 
 		protected override bool OnMove( Direction d )
 		{
-            if (m_PokerGame != null) //Start Edit For Poker
-            {
-                if (!HasGump(typeof(PokerLeaveGump)))
-                {
-                    SendGump(new PokerLeaveGump(this, m_PokerGame));
-                    return false;
-                }
-
-            } //End Edit For Poker
-
             if (Hidden && AccessLevel == AccessLevel.Player)
             {
                 CustomRegion cR = Region as CustomRegion;

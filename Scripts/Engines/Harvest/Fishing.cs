@@ -140,11 +140,11 @@ namespace Server.Engines.Harvest
 				new MutateEntry( 100.0,  80.0,  5080.0,  true, typeof( MessageInABottle ) ),
 				//new MutateEntry(   0.0, 125.0, -2375.0, false, typeof( PrizedFish ), typeof( WondrousFish ), typeof( TrulyRareFish ), typeof( PeculiarFish ) ),
 				new MutateEntry(   0.0, 105.0, -1420.0, false, typeof( Boots ), typeof( Shoes ), typeof( Sandals ), typeof( ThighBoots ) ),
-                new MutateEntry(  100.1,  80.0,  500.0,  true, typeof( Butterflyfish ), typeof( BaronessButterflyfish ), typeof( CopperbandedButterflyfish ) ),
-				new MutateEntry(  100.1,  80.0,  750.0,  true, typeof( AlbinoAngelfish ), typeof( Angelfish ), typeof( AnteniAngelfish ), typeof( FlameAngelfish ), typeof( QueenAngelfish ) ),
-				new MutateEntry( 100.1,  80.0,  1000.0,  true, typeof( BrineShrimp ), typeof( Crab ), typeof( Jellyfish ), typeof( Pufferfish ), typeof( Shrimp ), typeof( SmallFishies ) ),
-				new MutateEntry(   100.1, 80.0, 1250.0, true, typeof( Anthias ), typeof( BambooShark ), typeof( BlueFish ), typeof( FantailGoldfish ), typeof( PowderblueTang ), typeof( YellowTang ) ),
-				new MutateEntry(   100.1, 80.0,  1500.0, true, typeof( SeveredAnchor ), typeof( FishBones ), typeof( Coral ), typeof( Pearl ), typeof( SeaGrass ), typeof( SunkenShip ) ),
+
+//				new MutateEntry(  100.1,  80.0,  750.0,  true, typeof( AlbinoAngelfish ), typeof( Angelfish ), typeof( AnteniAngelfish ), typeof( FlameAngelfish ), typeof( QueenAngelfish ) ),
+//				new MutateEntry( 100.1,  80.0,  1000.0,  true, typeof( BrineShrimp ), typeof( Crab ), typeof( Jellyfish ), typeof( Pufferfish ), typeof( Shrimp ), typeof( SmallFishies ) ),
+//				new MutateEntry(   100.1, 80.0, 1250.0, true, typeof( Anthias ), typeof( BambooShark ), typeof( BlueFish ), typeof( FantailGoldfish ), typeof( PowderblueTang ), typeof( YellowTang ) ),
+//				new MutateEntry(   100.1, 80.0,  1500.0, true, typeof( SeveredAnchor ), typeof( FishBones ), typeof( Coral ), typeof( Pearl ), typeof( SeaGrass ), typeof( SunkenShip ) ),
 				new MutateEntry(   0.0, 105.0, -1420.0, false, new Type[1]{ null } )  // 2nd 200.0 3rd -200
 			};
 
@@ -515,8 +515,6 @@ namespace Server.Engines.Harvest
 
         public override void OnHarvestFinished(Mobile from, Item tool, HarvestDefinition def, HarvestVein vein, HarvestBank bank, HarvestResource resource, object harvested)
         {
-            if (tool is DeepSeaFishingPole)
-                ((DeepSeaFishingPole)tool).Charges--;
 
             base.OnHarvestFinished(from, tool, def, vein, bank, resource, harvested);
 

@@ -62,7 +62,6 @@ namespace Server.Mobiles
 
         public override void OnCarve(Mobile from, Corpse corpse, Item item)
         {
-            corpse.DropItem(new FishingBait(4));
             base.OnCarve(from, corpse, item);
         } 
 

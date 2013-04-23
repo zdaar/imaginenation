@@ -1,8 +1,5 @@
 using System;
 
-//Bounty System Start
-using Server.BountySystem;
-//End Bounty System
 
 namespace Server.Items
 {
@@ -130,14 +127,7 @@ namespace Server.Items
 		{
 			base.Serialize( writer );
 
-			writer.Write( 4 ); // version
-
-            //bounty system
-            //ver 4
-            writer.Write(CreationTime);
-            writer.Write(Killer);
-            writer.Write(IsPlayer);
-            //end bounty system
+			writer.Write( 3 ); // version
 
             //ver 3
             writer.Write(m_Fame);
@@ -157,13 +147,6 @@ namespace Server.Items
 
 			switch ( version )
 			{
-                //bounty system
-                case 4:
-			        CreationTime = reader.ReadDateTime();
-			        Killer = reader.ReadMobile();
-			        IsPlayer = reader.ReadBool();
-			        goto case 3;
-                //end bounty system
                 case 3:
 			        m_Fame = reader.ReadInt();
 			        goto case 2;

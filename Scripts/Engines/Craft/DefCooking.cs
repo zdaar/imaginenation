@@ -148,7 +148,6 @@ namespace Server.Engines.Craft
 			index = AddCraft( typeof( TribalPaint ), 1044496, 1040000, 80.0, 80.0, typeof( SackFlour ), 1044468, 1, 1044253 );
 			AddRes( index, typeof( TribalBerry ), 1046460, 1, 1044253 );
 
-            index = AddCraft(typeof(FishingBait), 1044496, "fishing bait", 90.0, 102.5, typeof(Dough), 1044469, 1, 1044253);
             AddRes(index, typeof(RawFishSteak), "raw fish steaks", 2, 1044253);
             AddRes(index, typeof(RawRibs), "raw ribs", 2, 1044253);
             SetUseAllRes(index, true);

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using Server.BountySystem;
+
 using Server.Guilds;
 using Server.Mobiles;
 using Server.Network;
@@ -90,7 +90,6 @@ namespace Server.Misc
                 op.WriteLine("               <th width=\"5%\" class=\"sorttable_numeric\">Kills</th>");
                 op.WriteLine("               <th width=\"7%\" class=\"sorttable_numeric\">Fame</th>");
                 op.WriteLine("               <th width=\"7%\" class=\"sorttable_numeric\">Karma</th>");
-                op.WriteLine("               <th width=\"8%\" class=\"sorttable_numeric\">Bounty</th>");
                 op.WriteLine("               <th width=\"9%\" abbr=\"gametime\" class=\"sorttable_numeric\">Gametime</th>");
                 op.WriteLine("            </tr>");
                 op.WriteLine("         </thead>");
@@ -249,24 +248,6 @@ namespace Server.Misc
 
                         //End the column
                         op.WriteLine("</td>");
-
-                        #endregion
-
-                        #region Bounty
-
-                        //Start the column
-                        op.Write("               <td>");
-
-                        ArrayList m_Entries = BountyBoard.Entries;
-                        int price = 0;
-
-                        foreach (BountyBoardEntry entry in m_Entries)
-                        {
-                            if (entry.Wanted == m)
-                                price += entry.Price;
-                        }
-
-                        op.Write(price.ToString("#,##0", new CultureInfo("en-US")));
 
                         #endregion
 

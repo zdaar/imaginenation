@@ -758,7 +758,6 @@ namespace Server.Items
 		
 		private static Type[] m_Decorations = new Type[]
 		{
-			typeof( FishBones ),
 			typeof( WaterloggedBoots ), 
 			typeof( CaptainBlackheartsFishingPole ),			
 			typeof( CraftysFishingHat ),		

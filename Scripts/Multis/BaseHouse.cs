@@ -1207,8 +1207,6 @@ namespace Server.Multis
                 return true;
             if (item is RewardBrazier)
                 return true;
-            if (item is MiniRewardCan)
-                return true;
             if (item is ActionFigure)
                 return true;
 
