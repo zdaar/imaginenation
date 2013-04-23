@@ -51,6 +51,29 @@ namespace Server.Items
             from.CurePoison(from);
         }
 
+        public override void OnDoubleClickDead(Mobile from)
+        {
+            if (!from.Alive && from is PlayerMobile)
+            {
+                ((PlayerMobile)from).ForceResurrect();
+                CommandLogging.WriteLine(from, "Refreshing and resurrecting " + from.Name);
+            }
+            else if (!from.Alive)
+            {
+                from.Resurrect();
+                CommandLogging.WriteLine(from, "Refreshing and resurrecting " + from.Name);
+            }
+
+            CommandLogging.WriteLine(from, "Refreshing but not resurrecting " + from.Name);
+
+            from.PublicOverheadMessage(MessageType.Regular, from.SpeechHue, true, "I've been refreshed.");
+
+            from.Hits = from.HitsMax;
+            from.Stam = from.StamMax;
+            from.Mana = from.ManaMax;
+            from.CurePoison(from);
+        }
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
