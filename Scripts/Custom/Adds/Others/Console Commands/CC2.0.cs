@@ -9,7 +9,7 @@ using Server.Network;
 
 namespace Server.Misc
 {
-	internal class ServerConsole
+	internal class ServerConsole //DISABLED
 	{
 		private static PageEntry[] m_List;
 		public static bool paging;
@@ -23,10 +23,10 @@ namespace Server.Misc
 
 		#endregion
 
-		public static void Initialize()
-		{
-			EventSink.ServerStarted += new ServerStartedEventHandler( EventSink_ServerStarted );
-		}
+//		public static void Initialize()
+//		{
+//			EventSink.ServerStarted += new ServerStartedEventHandler( EventSink_ServerStarted );
+//		}
 
 		public static void ConsoleListen( Object stateInfo )
 		{
