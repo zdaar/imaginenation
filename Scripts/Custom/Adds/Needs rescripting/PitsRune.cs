@@ -13,7 +13,7 @@ namespace Server.Items
 		public PitsRune() : base( 0x1F14 )
 		{
 			//m_Target = new Point3D( 1987, 3093, 0 );
-            m_Target = new Point3D(5805, 1062, 0);
+            m_Target = new Point3D(5705, 1131, 0);
 			m_TargetMap = Map.Felucca;
 			Movable = false;
 			Hue = 2996;
