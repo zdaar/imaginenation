@@ -729,7 +729,7 @@ namespace Server.Misc
 				skills[i].Base = 100f;
 
 			//CityInfo city = GetStartLocation( args, false );
-            CityInfo city = new CityInfo("Green Acres", "Duel Pit", 5801, 1080, 0, Map.Felucca);
+            CityInfo city = new CityInfo("Green Acres", "Duel Pit", 5705, 1131, 0, Map.Felucca);
 
 			newChar.MoveToWorld( city.Location, city.Map );
 
