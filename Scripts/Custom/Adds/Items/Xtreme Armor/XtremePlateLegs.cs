@@ -24,7 +24,7 @@ namespace Server.Items
 		{
 
 			Weight = 7.0;
-            Hue = Utility.RandomList(2535, 2534);
+            Hue = Utility.RandomList(2535);
             Name = "Xtreme plate legs";
             BaseArmorRating = 53;
             IsRenamed = true;

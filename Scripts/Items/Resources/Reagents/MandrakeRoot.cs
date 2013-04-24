@@ -21,6 +21,7 @@ namespace Server.Items
 		public MandrakeRoot( int amount ) : base( 0xF86, amount )
 		{
             //Name = "Mandrake Root";
+            Weight = 0.0;
 		}
 
 		public MandrakeRoot( Serial serial ) : base( serial )

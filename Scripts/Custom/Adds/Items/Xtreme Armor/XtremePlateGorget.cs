@@ -22,7 +22,7 @@ namespace Server.Items
 		public XtremePlateGorget() : base( 0x1413 )
 		{
 			Weight = 2.0;
-            Hue = Utility.RandomList(2535, 2534);
+            Hue = Utility.RandomList(2535);
             Name = "Xtreme plate gorget";
             BaseArmorRating = 53;
             IsRenamed = true;

@@ -21,6 +21,7 @@ namespace Server.Items
 		public BlackPearl( int amount ) : base( 0xF7A, amount )
 		{
             //Name = "Black Pearl";
+            Weight = 0.0;
 		}
 
 		public BlackPearl( Serial serial ) : base( serial )

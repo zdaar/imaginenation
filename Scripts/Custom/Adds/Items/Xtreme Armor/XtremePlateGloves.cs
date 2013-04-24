@@ -23,7 +23,7 @@ namespace Server.Items
 		public XtremePlateGloves() : base( 0x1414 )
 		{
 			Weight = 2.0;
-            Hue = Utility.RandomList(2535, 2534);
+            Hue = Utility.RandomList(2535);
             Name = "Xtreme plate gloves";
             BaseArmorRating = 53;
             IsRenamed = true;

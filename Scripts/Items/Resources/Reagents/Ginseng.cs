@@ -20,6 +20,7 @@ namespace Server.Items
 		[Constructable]
 		public Ginseng( int amount ) : base( 0xF85, amount )
 		{
+            Weight = 0.0;
 		}
 
 		public Ginseng( Serial serial ) : base( serial )

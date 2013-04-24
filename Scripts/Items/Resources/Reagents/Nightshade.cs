@@ -20,6 +20,7 @@ namespace Server.Items
 		[Constructable]
 		public Nightshade( int amount ) : base( 0xF88, amount )
 		{
+            Weight = 0.0;
 		}
 
 		public Nightshade( Serial serial ) : base( serial )

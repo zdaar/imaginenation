@@ -17,6 +17,7 @@ namespace Server.Items
             : base(35, 0x1F50, amount)
         {
             //Name = "Magic Reflect Scroll";
+            Weight = 0.0;
         }
 
         public MagicReflectScroll(Serial serial)

@@ -21,6 +21,7 @@ namespace Server.Items
 		public SpidersSilk( int amount ) : base( 0xF8D, amount )
 		{
             //Name = "Spiders' Silk";
+            Weight = 0.0;
 		}
 
 		public SpidersSilk( Serial serial ) : base( serial )

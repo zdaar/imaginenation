@@ -14,6 +14,7 @@ namespace Server.Items
         public FlamestrikeScroll(int amount)
             : base(50, 0x1F5F, amount)//SERIAL ?
         {
+            Weight = 0.0;
         }
 
         public FlamestrikeScroll(Serial serial)

@@ -28,13 +28,23 @@ namespace Server.Misc
 				m.AddItem( pack );
 			}
 
-			//PackItem( new Gold( 3000 ) ); // Starting gold can be customized here
+			PackItem( new Gold( 50000 ) ); // Starting gold can be customized here
 			//PackItem( new MiniRewardCan() );
 			//PackItem( new Dagger() );
             PackItem(new Spellbook(UInt64.MaxValue));
             //PackItem( new KeyRing());
             //PackItem( new PlayerGuide());
             PackItem( new Scissors());
+             PackItem(new BagOfReagents());
+            PackItem(new BagOfScrolls());
+            PackItem(new ManaPotion( 5000 ) );
+            PackItem(new GreaterHealPotion( 5000 ) );
+            PackItem(new Bandage( 5000 ) );
+
+
+
+
+
 		}
 
 		private static Item MakeBlessed( Item item )
@@ -543,7 +553,10 @@ namespace Server.Misc
 
 			bank.DropItem( bag );
 		}
+        
 
+       
+        /*
 		private static void AddShirt( Mobile m, int shirtHue )
 		{
 			int hue = Utility.ClipDyedHue( shirtHue & 0x3FFF );
@@ -556,13 +569,13 @@ namespace Server.Misc
 			{
 				switch ( Utility.Random( 3 ) )
 				{
-					case 0: EquipItem( new Shirt( hue ), true ); break;
+					case 0: EquipItem( new Shirt( hue ), true ); break;    
 					case 1: EquipItem( new FancyShirt( hue ), true ); break;
 					case 2: EquipItem( new Doublet( hue ), true ); break;
 				}
 			}
 		}
-
+        
 		private static void AddPants( Mobile m, int pantsHue )
 		{
 			int hue = Utility.ClipDyedHue( pantsHue & 0x3FFF );
@@ -599,7 +612,7 @@ namespace Server.Misc
 			else
 				EquipItem( new Shoes( Utility.RandomYellowHue() ), true );
 		}
-
+        */
 		private static Mobile CreateMobile( Account a )
 		{
 			if ( a.Count >= a.Limit )
@@ -613,7 +626,7 @@ namespace Server.Misc
 
 			return null;
 		}
-
+        
 		private static void EventSink_CharacterCreated( CharacterCreatedEventArgs args )
 		{
 			if( !VerifyProfession( args.Profession ) )
@@ -702,14 +715,14 @@ namespace Server.Misc
 				newChar.FacialHairItemID = args.BeardID;
 				newChar.FacialHairHue = race.ClipHairHue( args.BeardHue & 0x3FFF );
 			}
-
+            /*
 			if( args.Profession <= 3 )
 			{
 				AddShirt( newChar, args.ShirtHue );
 				AddPants( newChar, args.PantsHue );
 				AddShoes( newChar );
 			}
-
+            */
 			if( TestCenter.Enabled )
 				FillBankbox( newChar );
 
@@ -721,6 +734,16 @@ namespace Server.Misc
 			}
 
 			//IN:X Settings
+            newChar.EquipItem( new XtremePlateChest());
+            newChar.EquipItem( new XtremePlateArms());
+            newChar.EquipItem( new XtremePlateGloves());
+            newChar.EquipItem( new XtremePlateGorget());
+            newChar.EquipItem( new XtremePlateHelm());
+            newChar.EquipItem( new XtremePlateLegs());
+            newChar.EquipItem( new Bardicheofvanquishing());
+            newChar.EquipItem( new Doublet(0x47e));
+            newChar.EquipItem( new Skirt(0x47e));
+            newChar.EquipItem( new HalfApron(2535)); 
 			newChar.StatCap = 300;
 			newChar.SkillsCap = 54000; //Iza - changed from 52000 to 54000 for proper all skills cap.
             Server.Skills skills = newChar.Skills;
@@ -731,7 +754,20 @@ namespace Server.Misc
 			//CityInfo city = GetStartLocation( args, false );
             CityInfo city = new CityInfo("Green Acres", "Duel Pit", 5705, 1131, 0, Map.Felucca);
 
-			newChar.MoveToWorld( city.Location, city.Map );
+           	newChar.MoveToWorld( city.Location, city.Map );
+
+            
+            pB.Movable = false;
+            newChar.AddItem(pB);
+          
+            /*
+            AddShirt(newChar, args.ShirtHue);
+            AddPants(newChar, args.PantsHue);
+            AddShoes(newChar);
+            
+
+            AddBackpack(newChar);
+            */
 
 			//if ((newChar.Account).AccessLevel <= AccessLevel.GameMaster)
 			//{

@@ -21,6 +21,7 @@ namespace Server.Items
 		public SulfurousAsh( int amount ) : base( 0xF8C, amount )
 		{
             //Name = "Sulfurous Ash";
+            Weight = 0.0;
 		}
 
 		public SulfurousAsh( Serial serial ) : base( serial )

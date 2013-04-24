@@ -24,7 +24,7 @@ namespace Server.Items
 		public XtremePlateArms() : base( 0x1410 )
 		{
 			Weight = 5.0;
-            Hue = Utility.RandomList(2535, 2534);
+            Hue = Utility.RandomList(2535);
             Name = "Xtreme plate arms";
             BaseArmorRating = 53;
             IsRenamed = true;

@@ -14,6 +14,7 @@ namespace Server.Items
         public LightningScroll(int amount)
             : base(29, 0x1F4A, amount)
         {
+            Weight = 0.0;
         }
 
         public LightningScroll(Serial serial)

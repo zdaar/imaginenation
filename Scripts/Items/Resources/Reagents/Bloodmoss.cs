@@ -21,6 +21,7 @@ namespace Server.Items
 		public Bloodmoss( int amount ) : base( 0xF7B, amount )
 		{
             //Name = "Blood Moss";
+            Weight = 0.0;
 		}
 
 		public Bloodmoss( Serial serial ) : base( serial )

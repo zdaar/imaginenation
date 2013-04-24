@@ -15,6 +15,7 @@ namespace Server.Items
             : base(28, 0x1F49, amount)
         {
             //Name = "Greater Heal";
+            Weight = 0.0;
         }
 
         public GreaterHealScroll(Serial serial)

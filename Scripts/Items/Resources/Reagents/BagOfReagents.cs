@@ -3,7 +3,7 @@ namespace Server.Items
 	public class BagOfReagents : Bag
 	{
 		[Constructable]
-		public BagOfReagents() : this( 50, false )
+		public BagOfReagents() : this( 5000, false )
 		{
 		}
 
@@ -23,10 +23,18 @@ namespace Server.Items
 					new Ginseng( amount ),
 					new MandrakeRoot( amount ),
 					new Nightshade( amount ),
-					new SulfurousAsh( amount ),
-					new SpidersSilk( amount )
+			    	new SulfurousAsh( amount ),
+					new SpidersSilk( amount ),
+                                    
 		};
+        
+             Item[] bandages = new Item[]
+                { 
+                    new Bandage( amount ),
+                    new GreaterHealPotion( amount ),
+                    new ManaPotion( amount ),
 
+        };
 			if( isEventBag )
 			{
 				EventItem = true;
@@ -41,7 +49,17 @@ namespace Server.Items
 					DropItem( reagents[i] );
 		}
 
-		public BagOfReagents( Serial serial ) : base( serial )
+        /*
+         Item[] bandages = new Item[] //j'arrive pas a rajouter les bandages et les pots dans le regbag
+                 { 
+                     new Bandage( 5000 ),
+                     new GreaterHealPotion( 5000 ),
+                     new ManaPotion( 5000 )
+        
+
+         };
+         */
+        public BagOfReagents( Serial serial ) : base( serial )
 		{
 		}
 

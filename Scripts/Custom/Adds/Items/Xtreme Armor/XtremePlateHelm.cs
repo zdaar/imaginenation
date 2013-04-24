@@ -22,7 +22,7 @@ namespace Server.Items
 		public XtremePlateHelm() : base( 0x1412 )
 		{
 			Weight = 5.0;
-            Hue = Utility.RandomList(2535, 2534);
+            Hue = Utility.RandomList(2535);
             Name = "Xtreme plate helmet";
             BaseArmorRating = 53;
             IsRenamed = true;

@@ -15,6 +15,7 @@
             : base(50, 0x1F5F, amount)//SERIAL ?
         {
             Name = "(NOS)FlameStrike";
+            Weight = 0.0;
         }
 
         public NOSFlameStrikeScroll(Serial serial)

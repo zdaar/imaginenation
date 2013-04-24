@@ -3,7 +3,7 @@ namespace Server.Items
 	public class BagOfScrolls : Bag
 	{
 		[Constructable]
-		public BagOfScrolls() : this( 50, false )
+		public BagOfScrolls() : this( 5000, false )
 		{
 		}
 
@@ -15,7 +15,7 @@ namespace Server.Items
 		[Constructable]
 		public BagOfScrolls( int amount, bool isEventBag )
 		{
-			SpellScroll[] scrolls = new SpellScroll[] { new FlamestrikeScroll( amount ), new LightningScroll( amount ), new GreaterHealScroll( amount ), new MagicReflectScroll( amount ) };
+			SpellScroll[] scrolls = new SpellScroll[] { new FlamestrikeScroll( amount ), new LightningScroll( amount ), new GreaterHealScroll( amount ), new MagicReflectScroll( amount ), new NOSFlameStrikeScroll( amount ) };
 
 			if( isEventBag )
 			{

@@ -23,7 +23,7 @@ namespace Server.Items
 		public XtremePlateChest() : base( 0x1415 )
 		{
 			Weight = 10.0;
-            Hue = Utility.RandomList(2535, 2534);
+            Hue = Utility.RandomList(2535);
             Name = "Xtreme plate chest";
             BaseArmorRating = 53;
             IsRenamed = true;

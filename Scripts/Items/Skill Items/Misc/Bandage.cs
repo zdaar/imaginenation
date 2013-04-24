@@ -31,6 +31,7 @@ namespace Server.Items
 		{
 			Stackable = true;
 			Amount = amount;
+            Weight = 0.0;
 		}
 
 		public Bandage( Serial serial ) : base( serial )

@@ -16,6 +16,7 @@ namespace Server.Items
             Name = "Mana Potion";
             Hue = 0x388;
             Amount = amount;
+            Weight = 0.0;
         }
 
 		public ManaPotion( Serial serial ) : base( serial )

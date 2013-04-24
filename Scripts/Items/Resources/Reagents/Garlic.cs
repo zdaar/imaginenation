@@ -20,6 +20,7 @@ namespace Server.Items
 		[Constructable]
 		public Garlic( int amount ) : base( 0xF84, amount )
 		{
+            Weight = 0.0;
 		}
 
 		public Garlic( Serial serial ) : base( serial )

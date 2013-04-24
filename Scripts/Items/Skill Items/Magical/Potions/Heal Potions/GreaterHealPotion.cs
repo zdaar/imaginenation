@@ -18,6 +18,8 @@ namespace Server.Items
         {
             Name = "greater heal potion";
             Amount = amount;
+            Weight = 0.0;
+
         }
 
 		public GreaterHealPotion( Serial serial ) : base( serial )
